@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace StickCuts.Input
 {
-    public class ThumbStickHandler
+    public class ThumbStick
     {
-        ThumbStick thumbStick;
         bool retrigger;
 
-        Controller c;
+        Controller controller;
         public event EventHandler<ThumbZone>? OnSelected = null;
         public event EventHandler? OnStickDown = null;
 
@@ -26,24 +25,19 @@ namespace StickCuts.Input
 
         GamepadButtonFlags buttonFlag;
 
-        public ThumbStickHandler(
-            ThumbStick thumbStick = ThumbStick.Left,
+        public ThumbStick(
+            GamepadButtonFlags thumbStick = GamepadButtonFlags.LeftThumb,
             bool retrigger = true
         )
         {
             this.retrigger = retrigger;
-            this.thumbStick = thumbStick;
-            c = new Controller(UserIndex.One);
-
-            if (thumbStick == ThumbStick.Left)
-                buttonFlag = GamepadButtonFlags.LeftThumb;
-            else
-                buttonFlag = GamepadButtonFlags.RightThumb;
+            buttonFlag = thumbStick;
+            controller = new Controller(UserIndex.One);
         }
 
         public void Update(float dt = 1000 / 60)
         {
-            if (c == null)
+            if (controller == null)
                 return;
 
             if (zoneTimeOut > 0)
@@ -54,7 +48,7 @@ namespace StickCuts.Input
 
             Vector2 value = new Vector2(0, 0);
 
-            var state = c.GetState();
+            var state = controller.GetState();
 
             if (state.Gamepad.Buttons == buttonFlag &&
                 OnStickDown != null &&
@@ -65,13 +59,13 @@ namespace StickCuts.Input
             }
 
 
-            switch (thumbStick)
+            switch (buttonFlag)
             {
-                case ThumbStick.Left:
+                case GamepadButtonFlags.LeftThumb:
                     value.X = state.Gamepad.LeftThumbX;
                     value.Y = state.Gamepad.LeftThumbY;
                     break;
-                case ThumbStick.Right:
+                case GamepadButtonFlags.RightThumb:
                     value.X = state.Gamepad.RightThumbX;
                     value.Y = state.Gamepad.RightThumbY;
                     break;

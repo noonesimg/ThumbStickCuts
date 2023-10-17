@@ -60,6 +60,9 @@ namespace StickCuts
             input = new InputManager();
             input.OnLayoutChange += UpdateControls;
             input.OnActionSelected += SelectAction;
+
+            input.OnHideWindow += (s, e) => { Hide(); };
+            input.OnShowWindow += (s, e) => { Show(); };
             input.LoadLayouts();
         }
 
@@ -86,6 +89,8 @@ namespace StickCuts
 
         private void UpdateControls(object? sender, Dictionary<ThumbZone, IAction?>? currentActions)
         {
+            Show();
+
             if (currentActions == null)
                 return;
 

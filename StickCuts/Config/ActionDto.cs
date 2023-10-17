@@ -46,7 +46,7 @@ namespace StickCuts.Config
 
                         return new FileAction(FilePath, Arguments, Icon);
                     }
-                case ActionTypes.Reload:
+                case ActionTypes.RELOAD:
                     {
                         return new SpecialAction()
                         {

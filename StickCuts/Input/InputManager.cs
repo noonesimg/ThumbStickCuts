@@ -1,4 +1,5 @@
-﻿using StickCuts.Actions;
+﻿using DXNET.XInput;
+using StickCuts.Actions;
 using StickCuts.Config;
 using StickCuts.Layouts;
 using System;
@@ -12,11 +13,15 @@ namespace StickCuts.Input
 {
     internal class InputManager
     {
-        ThumbStickHandler thumbLeft = new(ThumbStick.Left, true);
-        ThumbStickHandler thumbRight = new(ThumbStick.Right, false);
+        ThumbStick thumbLeft = new(GamepadButtonFlags.LeftThumb, true);
+        ThumbStick thumbRight = new(GamepadButtonFlags.RightThumb, false);
+        GamePadButton shoulderLeft = new(GamepadButtonFlags.LeftShoulder);
+        GamePadButton shoulderRight = new(GamepadButtonFlags.RightShoulder);
 
         public event EventHandler<Dictionary<ThumbZone, IAction?>>? OnLayoutChange;
         public event EventHandler<ThumbZone>? OnActionSelected;
+        public event EventHandler? OnHideWindow;
+        public event EventHandler? OnShowWindow;
 
         LayoutHandler layoutHandler = new();
         ConfigHandler config = new();
@@ -26,7 +31,19 @@ namespace StickCuts.Input
 
         public InputManager()
         {
+            thumbRight.OnStickDown += (s, e) =>
+            {
+                if (OnShowWindow != null)
+                    OnShowWindow(this, new EventArgs());
+            };
+
             thumbLeft.OnStickDown += (s, e) =>
+            {
+                if (OnHideWindow != null)
+                    OnHideWindow(this, new EventArgs());
+            };
+
+            shoulderLeft.OnButtonDown += (s, e) =>
             {
                 currentLayout = layoutHandler.GetPrevious();
                 if (currentLayout.TryGetActions(ThumbZone.Center, out var newActions))
@@ -37,7 +54,7 @@ namespace StickCuts.Input
                 }
             };
 
-            thumbRight.OnStickDown += (s, e) =>
+            shoulderRight.OnButtonDown += (s, e) =>
             {
                 currentLayout = layoutHandler.GetNext();
                 if (currentLayout.TryGetActions(ThumbZone.Center, out var newActions))
@@ -75,7 +92,7 @@ namespace StickCuts.Input
                         return;
                     }
 
-                    if (action.Type == ActionTypes.Reload)
+                    if (action.Type == ActionTypes.RELOAD)
                     {
                         LoadLayouts();
                         return;
@@ -94,6 +111,8 @@ namespace StickCuts.Input
         {
             thumbLeft.Update();
             thumbRight.Update();
+            shoulderLeft.Update();
+            shoulderRight.Update();
         }
 
         public void LoadLayouts()

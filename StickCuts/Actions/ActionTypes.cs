@@ -14,7 +14,7 @@ namespace StickCuts.Actions
         None,
         SHORTCUT,
         EXE,
-        Reload
+        RELOAD
     }
 
     //public class ActionTypeConverter : JsonConverter<ActionTypes>
