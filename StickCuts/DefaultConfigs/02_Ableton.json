@@ -1,0 +1,162 @@
+{
+  "Name": "Ableton",
+  "Actions": {
+    "Center": {
+      "BottomRight": {
+        "Type": "SHORTCUT",
+        "Icon": "F040A",
+        "Keys": [ 
+          { "Key": "SPACE" }
+        ]
+      },
+      "TopRight": {
+        "Type": "SHORTCUT",
+        "Icon": "F0193",
+        "Keys": [ 
+          { "Key": "VK_S", "Ctrl": true }
+        ]
+      },
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "F004D",
+        "Keys": [
+          { "Key": "LEFT" }
+        ]
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "F0054",
+        "Keys": [
+          { "Key": "RIGHT" }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "F005D",
+        "Keys": [
+          { "Key": "UP" }
+        ]
+      },
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": "F0045",
+        "Keys": [
+          { "Key": "DOWN" }
+        ]
+      }
+    },
+    "Left": {
+      "TopLeft": {
+        "Type": "SHORTCUT", 
+        "Icon": "F0486",
+        "Keys": [
+          { "Key": "VK_A", "Ctrl": true }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT", 
+        "Icon": "F0CA4",
+        "Keys": [
+          { "Key": "VK_3", "Ctrl": true }
+        ]
+      },
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "F0376",
+        "Keys": [
+          { "Key": "VK_2", "Ctrl": true }
+        ]
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "F0417",
+        "Keys": [
+          { "Key": "VK_1", "Ctrl": true }
+        ]
+      },
+      "BottomLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "F018F",
+        "Keys": [
+          { "Key": "VK_C", "Ctrl": true }
+        ]
+      },
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": "F0191",
+        "Keys": [
+          { "Key": "VK_D", "Ctrl": true }
+        ]
+      },
+      "BottomRight": {
+        "Type": "SHORTCUT",
+        "Icon": "F0192",
+        "Keys": [
+          { "Key": "VK_V", "Ctrl": true }
+        ]
+      }
+    },
+    "Right": {
+      
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "F04EB",
+        "Keys": [
+          { "Key": "TAB" },
+          { "Key": "TAB" }
+        ]
+      },
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": "F1064",
+        "Keys": [
+          { "Key": "TAB", "Shift": true },
+          { "Key": "TAB", "Shift": true }
+        ]
+      },
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "F067D",
+        "Keys": [
+          { "Key": "TAB", "Shift": true }
+        ]
+      }
+    },
+    "Bottom": {
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "F054C",
+        "Keys": [
+          { "Key": "VK_Z", "Ctrl": true }
+        ] 
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "F044E",
+        "Keys": [
+          { "Key": "VK_Y", "Ctrl": true }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "F05B1",
+        "Keys": [
+          { "Key": "VK_P", "Ctrl": true, "Alt": true }
+        ]
+      },
+      "Bottom": {
+        "Type": "RELOAD",
+        "Icon": "F0453"
+      }
+    },
+    "Top": {
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "F05B7",
+        "Keys": [
+          { "Key": "OEM_COMMA", "Ctrl": true }
+        ]
+      }
+    }
+  }
+}

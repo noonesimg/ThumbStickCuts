@@ -1,0 +1,69 @@
+{
+  "Name": "TEST",
+  "Actions": {
+    "Top": {
+      "Bottom": {
+        "Type": "RELOAD",
+        "Icon": "F0453"
+      }
+    },
+    "Center": {
+      "TopLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "F005B",
+        "Keys": [
+          { "Key": "UP" }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "F005D",
+        "Keys": [
+          { "Key": "UP" }
+        ]
+      },
+      "TopRight": {
+        "Type": "SHORTCUT",
+        "Icon": "F005C",
+        "Keys": [
+          { "Key": "UP" }
+        ]
+      },
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "F004D",
+        "Keys": [
+          { "Key": "LEFT" }
+        ]
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "F0054",
+        "Keys": [
+          { "Key": "RIGHT" }
+        ]
+      },
+      "BottomLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "F0042",
+        "Keys": [
+          { "Key": "DOWN" }
+        ]
+      },
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": "F0045",
+        "Keys": [
+          { "Key": "DOWN" }
+        ]
+      },
+      "BottomRight": {
+        "Type": "SHORTCUT",
+        "Icon": "F0043",
+        "Keys": [
+          { "Key": "DOWN" }
+        ]
+      }
+    }
+  }
+}
