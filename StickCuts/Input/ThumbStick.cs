@@ -75,7 +75,7 @@ namespace StickCuts.Input
             value.Y = Remap(value.Y, short.MinValue, short.MaxValue, -1.0f, 1.0f);
 
             // reset
-            if (value.Length < 0.8)
+            if (value.Length < 0.6)
             {
                 if (active && OnSelected != null)
                 {

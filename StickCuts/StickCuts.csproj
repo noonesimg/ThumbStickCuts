@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\MaterialDesignIconsDesktop.ttf" />
+    <None Remove="Fonts\RobotoMonoNerdFontMono-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\MaterialDesignIconsDesktop.ttf" />
+    <Resource Include="Fonts\RobotoMonoNerdFontMono-Regular.ttf" />
   </ItemGroup>
 
 </Project>

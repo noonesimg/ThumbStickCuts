@@ -7,7 +7,7 @@
         xmlns:svg="clr-namespace:SharpVectors.Converters;assembly=SharpVectors.Renderers.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="100" Width="100" AllowsTransparency="True"
-        Background="#19FFFFFF" FontFamily ="./Fonts/#Material Design Icons Desktop"
+        Background="#19FFFFFF" FontFamily ="./Fonts/#RobotoMono Nerd Font Mono"
         ResizeMode="NoResize" WindowStyle="None">
     <Border Padding="5">
         <Grid>
