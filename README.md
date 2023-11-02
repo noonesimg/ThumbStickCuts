@@ -1,5 +1,5 @@
 # ThumbStickCuts
-A simple WPF app that allows to bind shortcuts to a joystick thumbsticks.
+A simple WPF app that allows to bind shortcuts to a gamepad thumbsticks.
 
 ## But why?
 I'm daily driving a Steamdeck as a portable windows PC. 
