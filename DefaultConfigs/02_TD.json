@@ -1,0 +1,22 @@
+{
+  "Actions": {
+    "Center": {
+      "BottomRight":  { "Icon": "󰐊", "Action": "Space" },
+      "TopRight":     { "Icon": "󰆓", "Action": "Ctrl+s" },
+      "Left":         { "Icon": "󰁍", "Action": "left" },
+      "Right":        { "Icon": "", "Action": "right" },
+      "Top":          { "Icon": "", "Action": "up" },
+      "Bottom":       { "Icon": "", "Action": "down" }
+    },
+    "Left": {
+      "TopLeft":      { "Icon": "󰒆", "Action": "Ctrl+a" },
+      "Left":         { "Icon": "", "Action": "Ctrl+c" },
+      "Right":        { "Icon": "", "Action": "Ctrl+v" }
+    },
+    "Bottom": {
+      "Left":         { "Icon": "󰕌", "Action": "Ctrl+z" },
+      "Right":        { "Icon": "󰑎", "Action": "Ctrl+y" },
+      "Bottom":       { "Action": "Reload", "Icon": "" }
+    }
+  }
+}

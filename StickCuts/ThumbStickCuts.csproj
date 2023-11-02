@@ -21,4 +21,8 @@
     <Resource Include="Fonts\RobotoMonoNerdFontMono-Regular.ttf" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(SolutionDir)DefaultConfigs\*&quot; &quot;$(OutDir)\configs&quot; /y /E /I" />
+  </Target>
+
 </Project>
