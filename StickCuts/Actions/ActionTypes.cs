@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace StickCuts.Actions
+namespace ThumbStickCuts.Actions
 {
     public enum ActionTypes
     {

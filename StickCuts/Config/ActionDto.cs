@@ -1,13 +1,14 @@
-﻿using StickCuts.Actions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Automation.Provider;
+using ThumbStickCuts.Actions;
+using ThumbStickCuts.Util;
 using WindowsInput.Native;
 
-namespace StickCuts.Config
+namespace ThumbStickCuts.Config
 {
     public class KeyCombo
     {
@@ -21,7 +22,7 @@ namespace StickCuts.Config
         public string? Action { set; get; }
 
         public List<KeyCombo>? Keys { set; get; }
-        
+
         public IAction? ToAction()
         {
             if (string.IsNullOrEmpty(Action))

@@ -1,5 +1,4 @@
-﻿using StickCuts.Actions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ExceptionServices;
@@ -7,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsInput.Native;
 
-namespace StickCuts.Layouts
+namespace ThumbStickCuts.Layouts
 {
     public class LayoutHandler
     {
@@ -33,7 +32,7 @@ namespace StickCuts.Layouts
         {
             if (Layouts.Count == 0)
                 throw new Exception("No layouts");
-            
+
             if (Index == 0)
             {
                 Index = Layouts.Count - 1;

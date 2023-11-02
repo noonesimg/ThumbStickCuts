@@ -5,8 +5,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using ThumbStickCuts.Util;
 
-namespace StickCuts.Input
+namespace ThumbStickCuts.Input
 {
     public class ThumbStickSettings
     {

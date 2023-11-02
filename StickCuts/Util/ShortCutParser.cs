@@ -1,20 +1,17 @@
-﻿using StickCuts.Config;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using ThumbStickCuts.Config;
 using WindowsInput.Native;
 
-namespace StickCuts
+namespace ThumbStickCuts.Util
 {
     internal class ShortCutParser
     {
-        [DllImport("user32.dll")]
-        static extern short VkKeyScan(char ch);
-
         public static Dictionary<string, string> Replacements = new()
         {
             { "Ctrl", "LCONTROL" },
@@ -25,7 +22,8 @@ namespace StickCuts
 
         public static List<KeyCombo> ParseShortCut(string input)
         {
-            if (string.IsNullOrEmpty(input)) {
+            if (string.IsNullOrEmpty(input))
+            {
                 throw new ArgumentNullException("empty shortcut");
             }
 
@@ -45,8 +43,8 @@ namespace StickCuts
                         {
                             if (k.Length > 1 && Enum.TryParse<VirtualKeyCode>(k, true, out var key))
                                 shortcut.Key = key;
-                            else 
-                                shortcut.Key = (VirtualKeyCode)VkKeyScan(k[0]);
+                            else
+                                shortcut.Key = (VirtualKeyCode)Win32.VkKeyScan(k[0]);
                         }
                         else
                         {
@@ -61,7 +59,7 @@ namespace StickCuts
                     }
                     result.Add(shortcut);
                 }
-                catch (Exception) 
+                catch (Exception)
                 {
                     throw new ArgumentException($"couldn't parse shortcut: {item}");
                 }

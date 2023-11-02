@@ -1,19 +1,19 @@
-﻿using StickCuts.Input;
-using StickCuts.Layouts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ThumbStickCuts.Input;
+using ThumbStickCuts.Layouts;
 
-namespace StickCuts.Config
+namespace ThumbStickCuts.Config
 {
     public class LayoutDto
     {
         public string? Name { set; get; }
         public Dictionary<ThumbZone, Dictionary<ThumbZone, ActionDto?>>? Actions { get; set; }
 
-     
+
         public Layout? ToLayout()
         {
             if (Actions == null)

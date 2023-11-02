@@ -1,15 +1,15 @@
 ﻿using DXNET.XInput;
-using StickCuts.Actions;
-using StickCuts.Config;
-using StickCuts.Layouts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using ThumbStickCuts.Actions;
+using ThumbStickCuts.Config;
+using ThumbStickCuts.Layouts;
 
-namespace StickCuts.Input
+namespace ThumbStickCuts.Input
 {
     internal class InputManager
     {

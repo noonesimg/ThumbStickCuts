@@ -1,13 +1,13 @@
 ﻿using DXNET.XInput;
-using StickCuts.Actions;
-using StickCuts.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ThumbStickCuts.Actions;
+using ThumbStickCuts.Input;
 
-namespace StickCuts.Layouts
+namespace ThumbStickCuts.Layouts
 {
     public class Layout
     {

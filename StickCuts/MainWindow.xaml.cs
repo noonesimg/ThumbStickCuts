@@ -1,6 +1,4 @@
-﻿using StickCuts.Actions;
-using StickCuts.Input;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -15,6 +13,9 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ThumbStickCuts.Actions;
+using ThumbStickCuts.Input;
+using ThumbStickCuts.Util;
 
 namespace StickCuts
 {
@@ -55,7 +56,7 @@ namespace StickCuts
             };
 
             IntPtr hwnd = new WindowInteropHelper(this).Handle;
-            SetWindowExTransparent(hwnd);
+            Win32.FixWindowStyle(hwnd);
             
             try
             {
@@ -126,21 +127,6 @@ namespace StickCuts
                     };
                 }
             }
-        }
-
-        const int WS_EX_TRANSPARENT = 0x00000020;
-        const int GWL_EXSTYLE = (-20);
-
-        [DllImport("user32.dll")]
-        static extern int GetWindowLong(IntPtr hwnd, int index);
-
-        [DllImport("user32.dll")]
-        static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
-
-        public static void SetWindowExTransparent(IntPtr hwnd)
-        {
-            var extendedStyle = GetWindowLong(hwnd, GWL_EXSTYLE);
-            SetWindowLong(hwnd, GWL_EXSTYLE, extendedStyle | WS_EX_TRANSPARENT);
         }
     }
 }

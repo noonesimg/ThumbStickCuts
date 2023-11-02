@@ -1,6 +1,4 @@
-﻿using StickCuts.Actions;
-using StickCuts.Layouts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,8 +6,9 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using ThumbStickCuts.Layouts;
 
-namespace StickCuts.Config
+namespace ThumbStickCuts.Config
 {
     public class ConfigHandler
     {

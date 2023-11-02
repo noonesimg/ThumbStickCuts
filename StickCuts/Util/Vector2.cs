@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StickCuts
+namespace ThumbStickCuts.Util
 {
     public class Vector2
     {

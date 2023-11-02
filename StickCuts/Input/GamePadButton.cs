@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StickCuts.Input
+namespace ThumbStickCuts.Input
 {
     internal class GamePadButton
     {
@@ -21,7 +21,7 @@ namespace StickCuts.Input
         public GamePadButton(GamepadButtonFlags button)
         {
             buttonFlag = button;
-            
+
         }
 
         public void Update(float dt = 1000 / 60)
