@@ -5,6 +5,9 @@ using StickCuts.Config;
 using StickCuts.Layouts;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Input;
+using WindowsInput.Native;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace StickCuts
@@ -19,14 +22,13 @@ namespace StickCuts
 
         const int SW_HIDE = 0;
 
-
         [STAThread]
         public static void Main()
         {
             var handle = FindWindow(null, Console.Title);
             ShowWindow(handle, SW_HIDE);
 
-            var app = new Application();
+            var app = new System.Windows.Application();
             MainWindow win = new MainWindow();
             app.Run(win);
         }

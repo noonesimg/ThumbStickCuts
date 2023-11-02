@@ -4,58 +4,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Automation.Provider;
 using WindowsInput.Native;
 
 namespace StickCuts.Config
 {
-    public class KeyStrokeDto
+    public class KeyCombo
     {
-        public string? Key { get; set; }
-        public bool? Shift { set; get; }
-        public bool? Ctrl { set; get; }
-        public bool? Alt { set; get; }
+        public VirtualKeyCode Key { set; get; }
+        public List<VirtualKeyCode> Modifiers { set; get; } = new();
     }
+
     public class ActionDto
     {
-        public ActionTypes Type { set; get; }
         public string? Icon { set; get; }
+        public string? Action { set; get; }
 
-        // for keyboard shortcut
-        public List<KeyStrokeDto>? Keys { set; get; }
+        public List<KeyCombo>? Keys { set; get; }
         
-
-        // for starting file
-        public string? FilePath { set; get; }
-        public string? Arguments { set; get; }
-
         public IAction? ToAction()
         {
-            switch (Type)
+            if (string.IsNullOrEmpty(Action))
+                return null;
+
+            if (Action.ToLower() == "reload")
             {
-                case ActionTypes.SHORTCUT:
-                    {
-                        if (Keys == null || Keys.Count == 0)
-                            return null;
-
-                        return KeyAction.FromDto(Keys, Icon);
-                    }
-                case ActionTypes.EXE:
-                    {
-                        if (string.IsNullOrEmpty(FilePath))
-                            return null;
-
-                        return new FileAction(FilePath, Arguments, Icon);
-                    }
-                case ActionTypes.RELOAD:
-                    {
-                        return new SpecialAction()
-                        {
-                            Icon = Icon ?? string.Empty,
-                            Type = Type
-                        };
-                    }
+                return new SpecialAction()
+                {
+                    Icon = Icon ?? string.Empty,
+                    Type = ActionTypes.RELOAD
+                };
             }
-            return null;
+            else
+            {
+                return new KeyAction()
+                {
+                    Icon = Icon ?? Action,
+                    Keys = ShortCutParser.ParseShortCut(Action)
+                };
+            }
         }
     }
 }

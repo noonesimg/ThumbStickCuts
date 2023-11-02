@@ -13,7 +13,6 @@ namespace StickCuts.Actions
     {
         None,
         SHORTCUT,
-        EXE,
         RELOAD
     }
 }

@@ -1,122 +1,19 @@
 {
-  "Name": "TEST",
   "Actions": {
     "Top": {
-      "Bottom": {
-        "Type": "RELOAD",
-        "Icon": "F0453"
-      }
-    },
-    "Left": {
-      "Left": {
-        "Type": "SHORTCUT",
-        "Icon": "F018F",
-        "Keys": [
-          { "Key": "VK_C", "Ctrl": true }
-        ]
-      },
-      "Top": {
-        "Type": "SHORTCUT",
-        "Icon": "F0486",
-        "Keys": [
-          { "Key": "VK_A", "Ctrl": true }
-        ]
-      },
-      "Right": {
-        "Type": "SHORTCUT",
-        "Icon": "F0192",
-        "Keys": [
-          { "Key": "VK_V", "Ctrl": true }
-        ]
-      },
-      "Bottom": {
-        "Type": "SHORTCUT",
-        "Icon": "F05B3",
-        "Keys": [
-          { "Key": "LWIN" }
-        ]
-      }
+      "Bottom":   { "Action": "Reload", "Icon": "" }
     },
     "Center": {
-      "TopLeft": {
-        "Type": "SHORTCUT",
-        "Icon": "F005B",
-        "Keys": [
-          { "Key": "UP" }
-        ]
-      },
-      "Top": {
-        "Type": "SHORTCUT",
-        "Icon": "F005D",
-        "Keys": [
-          { "Key": "UP" }
-        ]
-      },
-      "TopRight": {
-        "Type": "SHORTCUT",
-        "Icon": "F005C",
-        "Keys": [
-          { "Key": "UP" }
-        ]
-      },
-      "Left": {
-        "Type": "SHORTCUT",
-        "Icon": "F004D",
-        "Keys": [
-          { "Key": "LEFT" }
-        ]
-      },
-      "Right": {
-        "Type": "SHORTCUT",
-        "Icon": "F0054",
-        "Keys": [
-          { "Key": "RIGHT" }
-        ]
-      },
-      "BottomLeft": {
-        "Type": "SHORTCUT",
-        "Icon": "F0042",
-        "Keys": [
-          { "Key": "DOWN" }
-        ]
-      },
-      "Bottom": {
-        "Type": "SHORTCUT",
-        "Icon": "F0045",
-        "Keys": [
-          { "Key": "DOWN" }
-        ]
-      },
-      "BottomRight": {
-        "Type": "SHORTCUT",
-        "Icon": "F0043",
-        "Keys": [
-          { "Key": "DOWN" }
-        ]
-      }
+      "Top":      { "Icon": "", "Action": "up" },
+      "Left":     { "Icon": "", "Action": "left" },
+      "Right":    { "Icon": "", "Action": "right" },
+      "Bottom":   { "Icon": "", "Action": "down" }
     },
-    "Bottom": {
-      "Top": {
-        "Type": "SHORTCUT",
-        "Icon": "F0193",
-        "Keys": [
-          { "Key": "VK_S", "Ctrl": true }
-        ] 
-      },
-      "Left": {
-        "Type": "SHORTCUT",
-        "Icon": "F054C",
-        "Keys": [
-          { "Key": "VK_Z", "Ctrl": true }
-        ] 
-      },
-      "Right": {
-        "Type": "SHORTCUT",
-        "Icon": "F044E",
-        "Keys": [
-          { "Key": "VK_Y", "Ctrl": true }
-        ]
-      }
+    "Left": {
+      "Left":     { "Icon": "", "Action": "Ctrl+c" },
+      "Right":    { "Icon": "", "Action": "Ctrl+v" },
+      "Top":      { "Icon": "󰒆", "Action": "Ctrl+a" },
+    "Bottom":     { "Icon": "","Action" : "LWIN" }
     }
   }
 }

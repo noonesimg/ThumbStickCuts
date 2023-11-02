@@ -116,13 +116,10 @@ namespace StickCuts
                 var action = kv.Value;
                 {
                     var text = action?.Icon;
-                    if (action?.Icon.Length > 1 && int.TryParse(action?.Icon, NumberStyles.HexNumber, null, out var unicodeInt))
-                    {
-                        text = Char.ConvertFromUtf32(unicodeInt);
-                    }
+                    
                     control.Content = new TextBlock
                     {
-                        Text = text,
+                        Text = action?.Icon, 
                         HorizontalAlignment = HorizontalAlignment.Center,
                         VerticalAlignment = VerticalAlignment.Center,
                         FontSize = 25
