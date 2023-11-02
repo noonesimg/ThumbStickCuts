@@ -21,7 +21,7 @@ namespace StickCuts.Input
         public GamePadButton(GamepadButtonFlags button)
         {
             buttonFlag = button;
-            controller = new Controller(UserIndex.One);
+            
         }
 
         public void Update(float dt = 1000 / 60)

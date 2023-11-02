@@ -14,7 +14,7 @@ namespace StickCuts.Actions
     class KeyStroke
     {
         public VirtualKeyCode Key;
-        public VirtualKeyCode[] Modifiers;
+        public VirtualKeyCode[] Modifiers = Array.Empty<VirtualKeyCode>();
 
         public static KeyStroke? FromDto(KeyStrokeDto dto)
         {

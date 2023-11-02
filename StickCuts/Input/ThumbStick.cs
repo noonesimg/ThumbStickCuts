@@ -8,9 +8,16 @@ using System.Threading.Tasks;
 
 namespace StickCuts.Input
 {
+    public class ThumbStickSettings
+    {
+        public bool Retrigger { set; get; } = true;
+        public float RetriggerTimeMs { set; get; } = 200;
+        public float DeadZone { set; get; } = 0.6f;
+    }
+
     public class ThumbStick
     {
-        bool retrigger;
+        ThumbStickSettings _settings;
 
         Controller controller;
         public event EventHandler<ThumbZone>? OnSelected = null;
@@ -18,26 +25,27 @@ namespace StickCuts.Input
 
         bool active = false;
 
-        float timeToWait = 200;
         float zoneTimeOut = 0;
         float buttonTimeOut = 0;
         int numRepetitions = 0;
 
         GamepadButtonFlags buttonFlag;
 
-        public ThumbStick(
-            GamepadButtonFlags thumbStick = GamepadButtonFlags.LeftThumb,
-            bool retrigger = true
-        )
+        public ThumbStick(GamepadButtonFlags thumbStick, ThumbStickSettings? settings = null)
         {
-            this.retrigger = retrigger;
             buttonFlag = thumbStick;
+            _settings = settings != null ? settings : new ThumbStickSettings();
             controller = new Controller(UserIndex.One);
+            if (!controller.IsConnected)
+            {
+                throw new ApplicationException("No controller is connected");
+            }
         }
 
-        public void Update(float dt = 1000 / 60)
+        public void Update()
         {
-            if (controller == null)
+            float dt = 1000 / 60;
+            if (controller == null || !controller.IsConnected)
                 return;
 
             if (zoneTimeOut > 0)
@@ -55,7 +63,7 @@ namespace StickCuts.Input
                 buttonTimeOut <= 0)
             {
                 OnStickDown(this, new EventArgs());
-                buttonTimeOut = timeToWait;
+                buttonTimeOut = _settings.RetriggerTimeMs;
             }
 
 
@@ -75,7 +83,7 @@ namespace StickCuts.Input
             value.Y = Remap(value.Y, short.MinValue, short.MaxValue, -1.0f, 1.0f);
 
             // reset
-            if (value.Length < 0.6)
+            if (value.Length < _settings.DeadZone)
             {
                 if (active && OnSelected != null)
                 {
@@ -88,15 +96,15 @@ namespace StickCuts.Input
                 return;
             }
             // active
-            else if (!active || zoneTimeOut <= 0 && retrigger)
+            else if (!active || zoneTimeOut <= 0 && _settings.Retrigger)
             {
                 active = true;
-                if (numRepetitions < timeToWait)
+                if (numRepetitions < _settings.RetriggerTimeMs)
                 {
                     numRepetitions += 1;
                     numRepetitions *= 2;
                 }
-                zoneTimeOut = timeToWait - Math.Min(numRepetitions, timeToWait - 1);
+                zoneTimeOut = _settings.RetriggerTimeMs - Math.Min(numRepetitions, _settings.RetriggerTimeMs - 1);
 
                 if (OnSelected != null)
                 {

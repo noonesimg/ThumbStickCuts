@@ -18,10 +18,4 @@ namespace StickCuts.Input
         Bottom,
         BottomRight,
     }
-
-    public enum ThumbStickLR
-    {
-        Left,
-        Right
-    }
 }

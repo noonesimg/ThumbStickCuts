@@ -7,6 +7,36 @@
         "Icon": "F0453"
       }
     },
+    "Left": {
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "F018F",
+        "Keys": [
+          { "Key": "VK_C", "Ctrl": true }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "F0486",
+        "Keys": [
+          { "Key": "VK_A", "Ctrl": true }
+        ]
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "F0192",
+        "Keys": [
+          { "Key": "VK_V", "Ctrl": true }
+        ]
+      },
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": "F05B3",
+        "Keys": [
+          { "Key": "LWIN" }
+        ]
+      }
+    },
     "Center": {
       "TopLeft": {
         "Type": "SHORTCUT",
@@ -62,6 +92,29 @@
         "Icon": "F0043",
         "Keys": [
           { "Key": "DOWN" }
+        ]
+      }
+    },
+    "Bottom": {
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "F0193",
+        "Keys": [
+          { "Key": "VK_S", "Ctrl": true }
+        ] 
+      },
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "F054C",
+        "Keys": [
+          { "Key": "VK_Z", "Ctrl": true }
+        ] 
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "F044E",
+        "Keys": [
+          { "Key": "VK_Y", "Ctrl": true }
         ]
       }
     }

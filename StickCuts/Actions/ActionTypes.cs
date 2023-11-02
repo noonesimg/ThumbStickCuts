@@ -16,17 +16,4 @@ namespace StickCuts.Actions
         EXE,
         RELOAD
     }
-
-    //public class ActionTypeConverter : JsonConverter<ActionTypes>
-    //{
-    //    public override ActionTypes Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    //    {
-    //        return Enum.Parse<ActionTypes>(reader.GetString() ?? ActionTypes.None.ToString(), true);
-    //    }
-
-    //    public override void Write(Utf8JsonWriter writer, ActionTypes value, JsonSerializerOptions options)
-    //    {
-    //        writer.WriteStringValue(value.ToString());
-    //    }
-    //}
 }

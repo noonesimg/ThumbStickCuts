@@ -13,15 +13,13 @@ namespace StickCuts.Input
 {
     internal class InputManager
     {
-        ThumbStick thumbLeft = new(GamepadButtonFlags.LeftThumb, true);
-        ThumbStick thumbRight = new(GamepadButtonFlags.RightThumb, false);
-        GamePadButton shoulderLeft = new(GamepadButtonFlags.LeftShoulder);
-        GamePadButton shoulderRight = new(GamepadButtonFlags.RightShoulder);
+        ThumbStick thumbLeft;
+        ThumbStick thumbRight;
 
         public event EventHandler<Dictionary<ThumbZone, IAction?>>? OnLayoutChange;
         public event EventHandler<ThumbZone>? OnActionSelected;
-        public event EventHandler? OnHideWindow;
-        public event EventHandler? OnShowWindow;
+        public event EventHandler? ToggleHidden;
+        public event EventHandler? NextLayout;
 
         LayoutHandler layoutHandler = new();
         ConfigHandler config = new();
@@ -31,30 +29,10 @@ namespace StickCuts.Input
 
         public InputManager()
         {
+            thumbLeft = new(GamepadButtonFlags.LeftThumb);
+            thumbRight = new(GamepadButtonFlags.RightThumb);
+
             thumbRight.OnStickDown += (s, e) =>
-            {
-                if (OnShowWindow != null)
-                    OnShowWindow(this, new EventArgs());
-            };
-
-            thumbLeft.OnStickDown += (s, e) =>
-            {
-                if (OnHideWindow != null)
-                    OnHideWindow(this, new EventArgs());
-            };
-
-            shoulderLeft.OnButtonDown += (s, e) =>
-            {
-                currentLayout = layoutHandler.GetPrevious();
-                if (currentLayout.TryGetActions(ThumbZone.Center, out var newActions))
-                {
-                    currentActions = newActions;
-                    if (OnLayoutChange != null && currentActions != null)
-                        OnLayoutChange(this, currentActions);
-                }
-            };
-
-            shoulderRight.OnButtonDown += (s, e) =>
             {
                 currentLayout = layoutHandler.GetNext();
                 if (currentLayout.TryGetActions(ThumbZone.Center, out var newActions))
@@ -63,6 +41,12 @@ namespace StickCuts.Input
                     if (OnLayoutChange != null && currentActions != null)
                         OnLayoutChange(this, currentActions);
                 }
+            };
+
+            thumbLeft.OnStickDown += (s, e) =>
+            {
+                if (ToggleHidden != null)
+                    ToggleHidden(this, new EventArgs());
             };
 
             thumbRight.OnSelected += (s, zone) =>
@@ -87,18 +71,17 @@ namespace StickCuts.Input
 
                     var action = currentActions[zone];
                     if (action == null)
-                    {
-                        Console.WriteLine("No Action");
                         return;
-                    }
 
-                    if (action.Type == ActionTypes.RELOAD)
+                    switch (action.Type)
                     {
-                        LoadLayouts();
-                        return;
+                        case ActionTypes.RELOAD:
+                            LoadLayouts();
+                            break;
+                        default:
+                            action.Perform();
+                            break;
                     }
-
-                    action.Perform();
                 }
                 catch
                 {
@@ -111,8 +94,6 @@ namespace StickCuts.Input
         {
             thumbLeft.Update();
             thumbRight.Update();
-            shoulderLeft.Update();
-            shoulderRight.Update();
         }
 
         public void LoadLayouts()

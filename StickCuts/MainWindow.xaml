@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StickCuts"
-        xmlns:svg="clr-namespace:SharpVectors.Converters;assembly=SharpVectors.Renderers.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="100" Width="100" AllowsTransparency="True"
         Background="#19FFFFFF" FontFamily ="./Fonts/#RobotoMono Nerd Font Mono"

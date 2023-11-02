@@ -1,0 +1,499 @@
+{
+  "Name": "Eng",
+  "Actions": {
+    "Center": {
+      "Top": { 
+        "Type": "SHORTCUT",
+        "Icon": "a",
+        "Keys": [ 
+          { "Key": "VK_A" }
+        ]
+      },
+      "TopLeft": { 
+        "Type": "SHORTCUT",
+        "Icon": "n",
+        "Keys": [ 
+          { "Key": "VK_N" }
+        ]
+      },
+      "Left": { 
+        "Type": "SHORTCUT",
+        "Icon": "t",
+        "Keys": [ 
+          { "Key": "VK_T" }
+        ]
+      },
+      "BottomLeft": { 
+        "Type": "SHORTCUT",
+        "Icon": "o",
+        "Keys": [ 
+          { "Key": "VK_O" }
+        ]
+      },
+      "Bottom": { 
+        "Type": "SHORTCUT",
+        "Icon": "e",
+        "Keys": [ 
+          { "Key": "VK_E" }
+        ]
+      },
+      "BottomRight": { 
+        "Type": "SHORTCUT",
+        "Icon": "r",
+        "Keys": [ 
+          { "Key": "VK_R" }
+        ]
+      },
+      "Right": { 
+        "Type": "SHORTCUT",
+        "Icon": "h",
+        "Keys": [ 
+          { "Key": "VK_H" }
+        ]
+      },
+      "TopRight": { 
+        "Type": "SHORTCUT",
+        "Icon": "d",
+        "Keys": [
+          { "Key": "VK_D" }
+        ]
+      }      
+    },
+    "Left": {
+      "Top": { 
+        "Type": "SHORTCUT",
+        "Icon": "i",
+        "Keys": [ 
+          { "Key": "VK_I" }
+        ]
+      },
+      "TopLeft": { 
+        "Type": "SHORTCUT",
+        "Icon": "m",
+        "Keys": [ 
+          { "Key": "VK_M" }
+        ]
+      },
+      "Left": { 
+        "Type": "SHORTCUT",
+        "Icon": "f",
+        "Keys": [ 
+          { "Key": "VK_F" }
+        ]
+      },
+      "BottomLeft": { 
+        "Type": "SHORTCUT",
+        "Icon": "g",
+        "Keys": [ 
+          { "Key": "VK_G" }
+        ]
+      },
+      "Bottom": { 
+        "Type": "SHORTCUT",
+        "Icon": "s",
+        "Keys": [ 
+          { "Key": "VK_S" }
+        ]
+      },
+      "BottomRight": { 
+        "Type": "SHORTCUT",
+        "Icon": "l",
+        "Keys": [ 
+          { "Key": "VK_L" }
+        ]
+      },
+      "Right": { 
+        "Type": "SHORTCUT",
+        "Icon": "w",
+        "Keys": [ 
+          { "Key": "VK_W" }
+        ]
+      },
+      "TopRight": { 
+        "Type": "SHORTCUT",
+        "Icon": "b",
+        "Keys": [
+          { "Key": "VK_B" }
+        ]
+      }
+    },
+    "Right": {
+      "Top": { 
+        "Type": "SHORTCUT",
+        "Icon": "k",
+        "Keys": [ 
+          { "Key": "VK_K" }
+        ]
+      },
+      "TopLeft": { 
+        "Type": "SHORTCUT",
+        "Icon": "j",
+        "Keys": [ 
+          { "Key": "VK_J" }
+        ]
+      },
+      "Left": { 
+        "Type": "SHORTCUT",
+        "Icon": "y",
+        "Keys": [ 
+          { "Key": "VK_Y" }
+        ]
+      },
+      "BottomLeft": { 
+        "Type": "SHORTCUT",
+        "Icon": "p",
+        "Keys": [ 
+          { "Key": "VK_P" }
+        ]
+      },
+      "Bottom": { 
+        "Type": "SHORTCUT",
+        "Icon": "z",
+        "Keys": [ 
+          { "Key": "VK_Z" }
+        ]
+      },
+      "BottomRight": { 
+        "Type": "SHORTCUT",
+        "Icon": "q",
+        "Keys": [ 
+          { "Key": "VK_Q" }
+        ]
+      },
+      "Right": { 
+        "Type": "SHORTCUT",
+        "Icon": " ",
+        "Keys": [ 
+          { "Key": "SPACE" }
+        ]
+      },
+      "TopRight": { 
+        "Type": "SHORTCUT",
+        "Icon": "x",
+        "Keys": [
+          { "Key": "VK_X" }
+        ]
+      }
+    },
+    "Bottom": {
+      "Top": { 
+        "Type": "SHORTCUT",
+        "Icon": "c",
+        "Keys": [ 
+          { "Key": "VK_C" }
+        ]
+      },
+      "TopLeft": { 
+        "Type": "SHORTCUT",
+        "Icon": "!",
+        "Keys": [ 
+          { "Key": "VK_1", "Shift": true }
+        ]
+      },
+      "TopRight": { 
+        "Type": "SHORTCUT",
+        "Icon": "?",
+        "Keys": [ 
+          { "Key": "OEM_2", "Shift": true }
+        ]
+      },
+      "Left": { 
+        "Type": "SHORTCUT",
+        "Icon": "u",
+        "Keys": [ 
+          { "Key": "VK_U" }
+        ]
+      },
+      "Bottom": { 
+        "Type": "SHORTCUT",
+        "Icon": "g",
+        "Keys": [ 
+          { "Key": "VK_G" }
+        ]
+      },
+      "BottomLeft": { 
+        "Type": "SHORTCUT",
+        "Icon": ".",
+        "Keys": [ 
+          { "Key": "OEM_PERIOD" }
+        ]
+      },
+      "BottomRight": { 
+        "Type": "SHORTCUT",
+        "Icon": ",",
+        "Keys": [ 
+          { "Key": "OEM_COMMA" }
+        ]
+      },
+      "Right": { 
+        "Type": "SHORTCUT",
+        "Icon": "v",
+        "Keys": [ 
+          { "Key": "VK_V" }
+        ]
+      }
+    },
+    "BottomLeft": {
+      "Left": { 
+        "Type": "SHORTCUT",
+        "Icon": "/",
+        "Keys": [ 
+          { "Key": "DIVIDE" }
+        ]
+      },
+      "Right": { 
+        "Type": "SHORTCUT",
+        "Icon": "\\",
+        "Keys": [ 
+          { "Key": "OEM_5" }
+        ]
+      },
+      "TopLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "#",
+        "Keys": [
+          { "Key": "VK_3", "Shift": true }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "@",
+        "Keys": [
+          { "Key": "VK_2", "Shift": true }
+        ]
+      },
+      "TopRight": {
+        "Type": "SHORTCUT",
+        "Icon": "$",
+        "Keys": [
+          { "Key": "VK_4", "Shift": true }
+        ]
+      },
+      "BottomLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "^",
+        "Keys": [
+          { "Key": "VK_6", "Shift": true }
+        ]
+      },
+      "BottomRight": {
+        "Type": "SHORTCUT",
+        "Icon": "~",
+        "Keys": [
+          { "Key": "OEM_3", "Shift": true }
+        ]
+      },
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": "|",
+        "Keys": [
+          { "Key": "OEM_5", "Shift": true }
+        ]
+      }
+    },
+    "TopRight": {
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "{",
+        "Keys": [
+          { "Key": "OEM_4", "Shift": true }
+        ]
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "}",
+        "Keys": [
+          { "Key": "OEM_6", "Shift": true }
+        ]
+      },
+      "TopLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "(",
+        "Keys": [
+          { "Key": "VK_9", "Shift": true }
+        ]
+      },
+      "TopRight": {
+        "Type": "SHORTCUT",
+        "Icon": ")",
+        "Keys": [
+          { "Key": "VK_0", "Shift": true }
+        ]
+      },
+      "BottomLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "[",
+        "Keys": [
+          { "Key": "OEM_4" }
+        ]
+      },
+      "BottomRight": {
+        "Type": "SHORTCUT",
+        "Icon": "]",
+        "Keys": [
+          { "Key": "OEM_6" }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "<",
+        "Keys": [
+          { "Key": "OEM_COMMA", "Shift": true }
+        ]
+      },
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": ">",
+        "Keys": [
+          { "Key": "OEM_PERIOD", "Shift": true }
+        ]
+      }
+    },
+    "Top": {
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": "0",
+        "Keys": [
+          { "Key": "VK_0" }
+        ]
+      },
+      "BottomLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "1",
+        "Keys": [
+          { "Key": "VK_1" }
+        ]
+      },
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "2",
+        "Keys": [
+          { "Key": "VK_2" }
+        ]
+      },
+      "TopLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "3",
+        "Keys": [
+          { "Key": "VK_3" }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "4",
+        "Keys": [
+          { "Key": "VK_4" }
+        ]
+      },
+      "TopRight": {
+        "Type": "SHORTCUT",
+        "Icon": "5",
+        "Keys": [
+          { "Key": "VK_5" }
+        ]
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "6",
+        "Keys": [
+          { "Key": "VK_6" }
+        ]
+      },
+      "BottomRight": {
+        "Type": "SHORTCUT",
+        "Icon": "7",
+        "Keys": [
+          { "Key": "VK_7" }
+        ]
+      }
+    },
+    "TopLeft": {
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": "=",
+        "Keys": [
+          { "Key": "OEM_PLUS"}
+        ]
+      },
+      "BottomLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "-",
+        "Keys": [
+          { "Key": "OEM_MINUS" }
+        ]
+      },
+      "BottomRight": {
+        "Type": "SHORTCUT",
+        "Icon": "+",
+        "Keys": [
+          { "Key": "OEM_PLUS", "Shift": true }
+        ]
+      },
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "*",
+        "Keys": [
+          { "Key": "VK_8", "Shift": true }
+        ]
+      },
+      "TopLeft": {
+        "Type": "SHORTCUT",
+        "Icon": "8",
+        "Keys": [
+          { "Key": "VK_8" }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": "9",
+        "Keys": [
+          { "Key": "VK_9" }
+        ]
+      },
+      "TopRight": {
+        "Type": "SHORTCUT",
+        "Icon": "%",
+        "Keys": [
+          { "Key": "VK_5", "Shift": true }
+        ]
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "&",
+        "Keys": [
+          { "Key": "VK_7", "Shift": true }
+        ]
+      }
+    },
+    "BottomRight": {
+      "Left": {
+        "Type": "SHORTCUT",
+        "Icon": "'",
+        "Keys": [
+          { "Key": "OEM_7" }
+        ]
+      },
+      "Right": {
+        "Type": "SHORTCUT",
+        "Icon": "\"",
+        "Keys": [
+          { "Key": "OEM_7", "Shift": true }
+        ]
+      },
+      "Bottom": {
+        "Type": "SHORTCUT",
+        "Icon": ";",
+        "Keys": [
+          { "Key": "OEM_1" }
+        ]
+      },
+      "Top": {
+        "Type": "SHORTCUT",
+        "Icon": ":",
+        "Keys": [
+          { "Key": "OEM_1", "Shift": true }
+        ]
+      }
+    }
+  }
+}

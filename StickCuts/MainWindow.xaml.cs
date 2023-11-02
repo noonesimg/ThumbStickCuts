@@ -56,14 +56,27 @@ namespace StickCuts
 
             IntPtr hwnd = new WindowInteropHelper(this).Handle;
             SetWindowExTransparent(hwnd);
+            
+            try
+            {
+                input = new InputManager();
+                input.OnLayoutChange += UpdateControls;
+                input.OnActionSelected += SelectAction;
 
-            input = new InputManager();
-            input.OnLayoutChange += UpdateControls;
-            input.OnActionSelected += SelectAction;
-
-            input.OnHideWindow += (s, e) => { Hide(); };
-            input.OnShowWindow += (s, e) => { Show(); };
-            input.LoadLayouts();
+                input.ToggleHidden += (s, e) => {
+                    if (IsVisible)
+                        Hide();
+                    else
+                        Show();
+                };
+                input.LoadLayouts();
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(ex.Message);
+                Application.Current.Shutdown();
+            }
+            
         }
 
         private void OnRendering(object? sender, EventArgs e)
@@ -89,8 +102,6 @@ namespace StickCuts
 
         private void UpdateControls(object? sender, Dictionary<ThumbZone, IAction?>? currentActions)
         {
-            Show();
-
             if (currentActions == null)
                 return;
 
