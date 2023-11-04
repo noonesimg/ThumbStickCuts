@@ -1,19 +1,33 @@
 {
+  "Window": {
+    "Width": 100,
+    "Height": 100,
+    "Left": 600,
+    "Bottom": 50,
+    "BgColor": "#ffffff",
+    "FgColor": "#000000",
+    "BgOpacity": 0.3
+  },
   "Actions": {
     "Top": {
       "Bottom":   { "Action": "Reload", "Icon": "" }
     },
     "Center": {
-      "Top":      { "Icon": "", "Action": "up" },
-      "Left":     { "Icon": "", "Action": "left" },
-      "Right":    { "Icon": "", "Action": "right" },
-      "Bottom":   { "Icon": "", "Action": "down" }
+      "Top":        { "Icon": "", "Action": "up" },
+      "Left":       { "Icon": "", "Action": "left" },
+      "Right":      { "Icon": "", "Action": "right" },
+      "Bottom":     { "Icon": "", "Action": "down" },
+      "BottomLeft": { "Icon": "󱁐", "Action": "space"}
     },
     "Left": {
       "Left":     { "Icon": "", "Action": "Ctrl+c" },
       "Right":    { "Icon": "", "Action": "Ctrl+v" },
       "Top":      { "Icon": "󰒆", "Action": "Ctrl+a" },
-    "Bottom":     { "Icon": "","Action" : "LWIN" }
+      "Bottom":   { "Icon": "","Action" : "LWIN" }
+    },
+    "Bottom": {
+      "Left":     { "Icon": "󰕌", "Action": "Ctrl+z" },
+      "Right":    { "Icon": "󰑎", "Action": "Ctrl+y" }
     }
   }
 }

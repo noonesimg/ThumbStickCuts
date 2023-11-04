@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Interop;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ThumbStickCuts.Actions;
+using ThumbStickCuts.Config;
 using ThumbStickCuts.Input;
 using ThumbStickCuts.Util;
+using MessageBox = System.Windows.Forms.MessageBox;
+using Color = System.Windows.Media.Color;
+using ColorConverter = System.Windows.Media.ColorConverter;
 
 namespace StickCuts
 {
@@ -38,8 +31,6 @@ namespace StickCuts
 
         private void OnLoaded(object? sender, EventArgs e)
         {
-            Left = SystemParameters.VirtualScreenWidth / 2 - Width / 2;
-            Top = SystemParameters.VirtualScreenHeight - Height - 50;
             controls = new Dictionary<ThumbZone, ContentControl>()
             {
 
@@ -63,7 +54,7 @@ namespace StickCuts
                 input = new InputManager();
                 input.OnLayoutChange += UpdateControls;
                 input.OnActionSelected += SelectAction;
-
+                input.OnWindowStyleChanged += UpdateWindow;
                 input.ToggleHidden += (s, e) => {
                     if (IsVisible)
                         Hide();
@@ -71,11 +62,12 @@ namespace StickCuts
                         Show();
                 };
                 input.LoadLayouts();
+                
             }
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message);
-                Application.Current.Shutdown();
+                System.Windows.Application.Current.Shutdown();
             }
             
         }
@@ -92,15 +84,15 @@ namespace StickCuts
             {
                 foreach (var c in controls.Values)
                 {
-                    c.SetCurrentValue(ForegroundProperty, Brushes.Black);
+                    c.Foreground = Foreground;
                 }
             }
             else
             {
-                controls[zone].SetCurrentValue(ForegroundProperty, Brushes.Red);
+                controls[zone].Foreground = System.Windows.Media.Brushes.Red;
             }
         }
-
+        
         private void UpdateControls(object? sender, Dictionary<ThumbZone, IAction?>? currentActions)
         {
             if (currentActions == null)
@@ -121,12 +113,34 @@ namespace StickCuts
                     control.Content = new TextBlock
                     {
                         Text = action?.Icon, 
-                        HorizontalAlignment = HorizontalAlignment.Center,
-                        VerticalAlignment = VerticalAlignment.Center,
+                        HorizontalAlignment = System.Windows.HorizontalAlignment.Center,
+                        VerticalAlignment = System.Windows.VerticalAlignment.Center,
                         FontSize = 25
                     };
                 }
             }
+        }
+
+        private SolidColorBrush HexToBrush(string hexColor, float opacity)
+        {
+            Color color = (Color)ColorConverter.ConvertFromString(hexColor);
+            color.A = (byte)(opacity * 255);
+            return new SolidColorBrush(color);
+        }
+
+        private void UpdateWindow(object? sender, WindowStyleDto style)
+        {
+            var currentScreen = Screen.AllScreens[style.ScreenIndex];
+
+            Width = style.Width;
+            Height = style.Height;
+            Left = currentScreen.Bounds.Left + style.Left;
+            Top = currentScreen.Bounds.Top + currentScreen.Bounds.Height - style.Height - style.Bottom;
+
+            Background = HexToBrush(style.BgColor, style.BgOpacity);
+            Foreground = HexToBrush(style.FgColor, 1.0f);
+            CenterIcon.Text = style.Icon;
+            SelectAction(this, ThumbZone.Center);
         }
     }
 }

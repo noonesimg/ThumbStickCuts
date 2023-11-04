@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ThumbStickCuts.Actions;
+using ThumbStickCuts.Config;
 using ThumbStickCuts.Input;
 
 namespace ThumbStickCuts.Layouts
@@ -30,5 +31,7 @@ namespace ThumbStickCuts.Layouts
             }
             else return false;
         }
+
+        public WindowStyleDto Window { set; get; } = new WindowStyleDto();
     }
 }

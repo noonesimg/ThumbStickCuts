@@ -12,8 +12,6 @@ namespace ThumbStickCuts
 {
     public class Program
     {
-        
-
         [STAThread]
         public static void Main()
         {

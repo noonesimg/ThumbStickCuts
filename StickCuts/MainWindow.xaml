@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StickCuts"
         mc:Ignorable="d"
         Title="MainWindow" Height="100" Width="100" AllowsTransparency="True"
-        Background="#19FFFFFF" FontFamily ="./Fonts/#RobotoMono Nerd Font Mono"
+        FontFamily ="./Fonts/#RobotoMono Nerd Font Mono"
         ResizeMode="NoResize" WindowStyle="None">
     <Border Padding="5">
         <Grid>
@@ -20,6 +20,13 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <ContentControl Grid.Row="1" Grid.Column="1">
+                <TextBlock Name="CenterIcon" VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="25"
+                           Opacity="0.4"
+                           Text=""/>
+            </ContentControl>
 
             <ContentControl Grid.Row="0" Grid.Column="0" Name="TopLeftControl"/>
             <ContentControl Grid.Row="0" Grid.Column="1" Name="TopControl"/>

@@ -13,9 +13,9 @@ namespace ThumbStickCuts.Input
     {
         public bool Retrigger { set; get; } = true;
         public float RetriggerTimeMs { set; get; } = 200;
-        public float DeadZone { set; get; } = 0.6f;
+        public float DeadZone { set; get; } = 0.4f;
     }
-
+    
     public class ThumbStick
     {
         ThumbStickSettings _settings;
@@ -63,8 +63,8 @@ namespace ThumbStickCuts.Input
                 OnStickDown != null &&
                 buttonTimeOut <= 0)
             {
-                OnStickDown(this, new EventArgs());
                 buttonTimeOut = _settings.RetriggerTimeMs;
+                OnStickDown(this, new EventArgs());
             }
 
 

@@ -1,13 +1,22 @@
 {
-  "Name": "Ableton",
+  "Window": {
+    "Icon": "󰎆",
+    "Width": 100,
+    "Height": 100,
+    "Left": 1165,
+    "Bottom": 15,
+    "BgColor": "#262525",
+    "FgColor": "#ffffff",
+    "BgOpacity": 0.6
+  },
   "Actions": {
     "Center": {
       "BottomRight":  { "Icon": "󰐊", "Action": "Space" },
       "TopRight":     { "Icon": "󰆓", "Action": "Ctrl+s" },
-      "Left":         { "Icon": "󰁍", "Action": "left" },
-      "Right":        { "Icon": "", "Action": "right" },
-      "Top":          { "Icon": "", "Action": "up" },
-      "Bottom":       { "Icon": "", "Action": "down" }
+      "Top":          { "Icon": "", "Action": "up" },
+      "Left":         { "Icon": "", "Action": "left" },
+      "Right":        { "Icon": "", "Action": "right" },
+      "Bottom":       { "Icon": "", "Action": "down" }
     },
     "Left": {
       "TopLeft":      { "Icon": "󰒆", "Action": "Ctrl+a" },

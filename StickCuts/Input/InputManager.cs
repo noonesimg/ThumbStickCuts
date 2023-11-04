@@ -18,6 +18,7 @@ namespace ThumbStickCuts.Input
 
         public event EventHandler<Dictionary<ThumbZone, IAction?>>? OnLayoutChange;
         public event EventHandler<ThumbZone>? OnActionSelected;
+        public event EventHandler<WindowStyleDto> OnWindowStyleChanged;
         public event EventHandler? ToggleHidden;
         public event EventHandler? NextLayout;
 
@@ -26,6 +27,8 @@ namespace ThumbStickCuts.Input
 
         Layout currentLayout = new Layout();
         Dictionary<ThumbZone, IAction?>? currentActions;
+
+        bool active = true;
 
         public InputManager()
         {
@@ -40,11 +43,15 @@ namespace ThumbStickCuts.Input
                     currentActions = newActions;
                     if (OnLayoutChange != null && currentActions != null)
                         OnLayoutChange(this, currentActions);
+
+                    if (OnWindowStyleChanged != null)
+                        OnWindowStyleChanged(this, currentLayout.Window);
                 }
             };
 
             thumbLeft.OnStickDown += (s, e) =>
             {
+                active = !active;
                 if (ToggleHidden != null)
                     ToggleHidden(this, new EventArgs());
             };
@@ -63,6 +70,9 @@ namespace ThumbStickCuts.Input
             {
                 try
                 {
+                    if (!active)
+                        return;
+                    
                     if (OnActionSelected != null)
                         OnActionSelected(this, zone);
 
@@ -107,6 +117,9 @@ namespace ThumbStickCuts.Input
                 if (OnLayoutChange != null && currentActions != null)
                     OnLayoutChange(this, currentActions);
             }
+
+            if (OnWindowStyleChanged != null)
+                OnWindowStyleChanged(this, currentLayout.Window);
         }
     }
 }

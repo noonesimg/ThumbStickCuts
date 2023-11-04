@@ -1,4 +1,13 @@
 {
+  "Window": {
+    "Width": 100,
+    "Height": 100,
+    "Left": 600,
+    "Bottom": 50,
+    "BgColor": "#ffffff",
+    "FgColor": "#000000",
+    "BgOpacity": 0.3
+  },
   "Actions": {
     "Center": {
       "Top":          { "Action": "a" },
